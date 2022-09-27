@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 public class Main {
@@ -8,20 +9,14 @@ public class Main {
         }
         String intAString = Arrays.toString(arr);
         System.out.println(intAString);
-        int max = 0;
-        int min = 200000;
+        double middle = 0;
+        double summ = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
-            }
+            summ += arr[i];
         }
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] <= min) {
-                min = arr[i];
-            }
-        }
-        System.out.println("Максимальная сумма трат за день составила " + max + " рублей.");
-        System.out.println("Минимальная сумма трат за день составила " + min + " рублей.");
+        middle = summ / arr.length;
+        String result = String.format("%.2f", middle);
+        System.out.print("Средняя сумма трат за месяц составила "+ result +" рублей.");
     }
 }
 
