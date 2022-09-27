@@ -8,11 +8,20 @@ public class Main {
         }
         String intAString = Arrays.toString(arr);
         System.out.println(intAString);
-        int summ = 0;
+        int max = 0;
+        int min = 200000;
         for (int i = 0; i < arr.length; i++) {
-            summ += arr[i];
+            if (arr[i] > max) {
+                max = arr[i];
+            }
         }
-        System.out.println("Сумма трат за месяц составила " + summ + " рублей.");
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] <= min) {
+                min = arr[i];
+            }
+        }
+        System.out.println("Максимальная сумма трат за день составила " + max + " рублей.");
+        System.out.println("Минимальная сумма трат за день составила " + min + " рублей.");
     }
 }
 
